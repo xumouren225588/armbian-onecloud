@@ -329,8 +329,9 @@ jobs:
           EOF
 
       - name: Upload to release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2.2.0
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ env.TAG }}
           append_body: true
           body_path: Release.md
